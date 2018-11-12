@@ -7,9 +7,8 @@ public class NeuralNetwork {
     static enum LayerType {I, H, O}
     final static  int INPUT_NEURONS = 2;
     final static int HIDDEN_NEURONS = 2;
-    final static int OUTPUT_NEURONS = 1;
     static final double LEARNING_RATE = 0.8;
-    private Neuron[] neurons = new Neuron [INPUT_NEURONS + HIDDEN_NEURONS + OUTPUT_NEURONS];
+    private Neuron[] neurons = new Neuron [INPUT_NEURONS + HIDDEN_NEURONS + 1];
     public NeuralNetwork(){
         IntStream.range(0, INPUT_NEURONS).forEach(i -> neurons[i] = new Neuron(LayerType.I));
         IntStream.range(INPUT_NEURONS, INPUT_NEURONS + HIDDEN_NEURONS).forEach(i -> neurons[i] = new Neuron(LayerType.H));
